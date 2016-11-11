@@ -1,3 +1,6 @@
 <?php include("header.php")?>
-	<h1>Bem vindo!</h1>
+<?php
+$total = 10 + 20 / 4;
+echo $total;
+?>
 <?php include("footer.php")?>
