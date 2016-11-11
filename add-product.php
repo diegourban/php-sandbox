@@ -1,8 +1,8 @@
 <?php include("header.php")?>
 	<?php
-	$nome = $_GET["nome"];
-	$preco = $_GET["preco"];
+	$name = $_GET["name"];
+	$price = $_GET["price"];
 	?>
 
-	<p class="alert-success">Produto <?php echo $nome; ?>, <?= $preco; ?> adicionado com sucesso!</p>
+	<p class="alert-success">Product <?php echo $name; ?>, <?= $price; ?> added with success!</p>
 <?php include("footer.php")?>
