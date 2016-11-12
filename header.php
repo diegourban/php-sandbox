@@ -15,6 +15,7 @@
 				<div class="navbar-header">
 					<ul class="nav navbar-nav">
 						<li><a href="product-form.php">Add Product</a></li>
+						<li><a href="product-list.php">Products</a></li>
 						<li><a href="about.php">About</a></li>
 					</ul>
 				</div>

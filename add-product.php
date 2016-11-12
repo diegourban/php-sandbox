@@ -1,4 +1,5 @@
-<?php include("header.php")?>
+<?php include("header.php"); ?>
+<?php include("connect.php"); ?>
 
 <?php
 
@@ -9,9 +10,8 @@ function insertProduct($conn, $name, $price) {
 
 $name = $_GET["name"];
 $price = $_GET["price"];
-$conn = mysqli_connect('localhost', 'root', '', 'store');
 
-if(insertProduct($conn, $name, $price)) { ?>
+if(insertProduct($connection, $name, $price)) { ?>
 	<p class="text-success">Product <?php echo $name; ?>, <?= $price; ?> added with success!</p>
 <?php } else { 
 	$msg = mysqli_error($conn);
@@ -23,4 +23,4 @@ if(insertProduct($conn, $name, $price)) { ?>
 mysqli_close($conn);
 ?>
 
-<?php include("footer.php")?>
+<?php include("footer.php"); ?>
