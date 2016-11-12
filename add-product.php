@@ -1,12 +1,6 @@
-<?php include("header.php"); ?>
-<?php include("connect.php"); ?>
-
-<?php
-
-function insertProduct($conn, $name, $price) {
-	$query = "insert into products (name, price) values('{$name}', {$price})";
-	return mysqli_query($conn, $query);
-}
+<?php include("header.php");
+	include("connect.php");
+	include("db-product.php");
 
 $name = $_GET["name"];
 $price = $_GET["price"];
@@ -20,7 +14,7 @@ if(insertProduct($connection, $name, $price)) { ?>
 	<p class="text-danger">Reason: <?= $msg; ?></p>
 <?php 
 }
-mysqli_close($conn);
+mysqli_close($connection);
 ?>
 
 <?php include("footer.php"); ?>
