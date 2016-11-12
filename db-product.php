@@ -12,3 +12,8 @@ function insertProduct($conn, $name, $price) {
 	$query = "insert into products (name, price) values('{$name}', {$price})";
 	return mysqli_query($conn, $query);
 }
+
+function removeProduct($conn, $id) {
+	$query = "delete from products where id = {$id}";
+	return mysqli_query($conn, $query);
+}
