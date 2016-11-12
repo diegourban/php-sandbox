@@ -1,4 +1,9 @@
-<?php include("header.php"); ?>
+<?php include("header.php"); 
+include("connect.php");
+include("db-category.php"); 
+
+$categories = listCategories($connection);
+?>
 
 	<h1>Product Form</h1>
 	<form action="add-product.php" method="post">
@@ -14,6 +19,14 @@
 			<tr>
 				<td>Description</td>
 				<td><textarea class="form-control" name="description"></textarea></td>
+			</tr>
+			<tr>
+				<td>Category</td>
+				<td>
+					<?php foreach($categories as $category) : ?>
+						<input type="radio" name="category_id" value="<?=$category['id']?>"><?=$category['name']?></br>	
+					<?php endforeach ?>
+				</td>
 			</tr>
 			<tr>
 				<td>
