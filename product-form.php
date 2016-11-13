@@ -21,11 +21,19 @@ $categories = listCategories($connection);
 				<td><textarea class="form-control" name="description"></textarea></td>
 			</tr>
 			<tr>
+				<td></td>
+				<td><input type="checkbox" name="used" value="true"> Used</td>
+			</tr>
+			<tr>
 				<td>Category</td>
 				<td>
-					<?php foreach($categories as $category) : ?>
-						<input type="radio" name="category_id" value="<?=$category['id']?>"><?=$category['name']?></br>	
-					<?php endforeach ?>
+					<select name="category_id" class="form-control">
+						<?php foreach($categories as $category) : ?>
+							<option value="<?=$category['id']?>">
+								<?=$category['name']?>
+							</option>	
+						<?php endforeach ?>
+					</select>
 				</td>
 			</tr>
 			<tr>

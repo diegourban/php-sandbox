@@ -8,8 +8,8 @@ function listProducts($connection) {
 	return $products;
 }
 
-function insertProduct($conn, $name, $price, $description, $category_id) {
-	$query = "insert into products (name, price, description, category_id) values('{$name}', {$price}, '{$description}', {$category_id})";
+function insertProduct($conn, $name, $price, $description, $category_id, $used) {
+	$query = "insert into products (name, price, description, category_id, used) values('{$name}', {$price}, '{$description}', {$category_id}, {$used})";
 	return mysqli_query($conn, $query);
 }
 
