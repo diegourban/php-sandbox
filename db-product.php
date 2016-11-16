@@ -13,7 +13,18 @@ function insertProduct($conn, $name, $price, $description, $category_id, $used) 
 	return mysqli_query($conn, $query);
 }
 
+function editProduct($conn, $id, $name, $price, $description, $category_id, $used) {
+	$query = "update products set name = '{$name}', price = {$price}, description = '{$description}', category_id = {$category_id}, used = {$used} where id = {$id}";
+	return mysqli_query($conn, $query);
+}
+
 function removeProduct($conn, $id) {
 	$query = "delete from products where id = {$id}";
 	return mysqli_query($conn, $query);
+}
+
+function findProduct($conn, $id) {
+	$query = "select * from products where id = {$id}";
+	$result = mysqli_query($conn, $query);
+	return mysqli_fetch_assoc($result);
 }

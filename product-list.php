@@ -22,6 +22,9 @@ if(array_key_exists("removed", $_GET) && $_GET["removed"] == true) {
 		<td><?= substr($product['description'], 0, 40); ?></td>
 		<td><?= $product['category_name']; ?></td>
 		<td>
+			<a class="btn btn-primary" href="edit-product-form.php?id=<?=$product['id']?>">Edit</a>
+		</td>
+		<td>
 			<form action="remove-product.php" method="post">
 				<input type="hidden" name="id" value="<?=$product['id']?>">
 				<button class="btn btn-danger">Remove</button>
